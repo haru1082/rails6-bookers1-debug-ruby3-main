@@ -10,7 +10,8 @@
   		<h2>Book detail</h2>
   		<table class='table'>
   		  <tr>
-          <td><%= link_to(@book.user) do %>
+          <td>
+            <%= link_to(@book.user) do %>
             <%= image_tag @book.user.get_profile_image, size:"100x100" %><br>
             <%= @book.user.name %>
             <% end %>
@@ -19,18 +20,24 @@
           <td><%= @book.body %></td>
           <% if @book.user == current_user %>
             <td><%= link_to 'Edit', edit_book_path(@book), class: "btn btn-sm btn-success" %></td>
-            <td><%= link_to 'Destroy', @book, method: :delete, data: { confirm: '本当に消しますか？' }, class: "btn btn-sm btn-danger"%></td>
+            <td><%= link_to 'Destroy', @book, method: :delete, data: { confirm: '本当に消しますか？' }, class: "btn btn-sm btn-danger" %></td>
           <% end %>
         </tr>
       </table>
       
      <div>
-       <p>コメント数：<%= @book.book_comments.count %></p>
-       <% @book.book_comments.each do |book_comment| %>
-         <p><%= image_tag book_comment.user.get_profile_image(100,100) %></p>
-         <%= book_comment.user.name %>
-         <%= book_comment.created_at.strftime('%Y/%m/%d') %><%= book_comment.comment %>
-       <% end %>
+      <table>
+       <tr>
+        <td>
+          <% @book.book_comments.each do |book_comment| %>
+          <%= image_tag @book.user.get_profile_image, size:"100x100" %><br>
+          <%= book_comment.user.name %>
+          <% end %>
+        </td>
+        <td></td>
+        <td></td>
+       </tr>
+      </table> 
      </div>
 
      <div>
