@@ -10,7 +10,7 @@
         <% if user_signed_in? %>
           <li>
             <%= link_to user_path(current_user),class: 'nav-link text-light' do %>
-              <i class="fas fa-home"></i> Home
+              <i class="fa-solid fa-house"></i> Home
             <% end %>
           </li>
           <li>
@@ -31,22 +31,22 @@
         <% else %>
           <li>
             <%= link_to root_path,class: 'nav-link text-light' do %>
-              <i class="fas fa-home"></i> Home
+              <i class="fa-solid fa-house"></i> Home
             <% end %>
           </li>
           <li>
             <%= link_to home_about_path,class: 'nav-link text-light' do %>
-              <i class="fas fa-link"></i> About
+              <i class="fa-solid fa-link"></i> About
             <% end %>
           </li>
           <li>
             <%= link_to new_user_registration_path,class: 'nav-link text-light' do %>
-              <i class="fas fa-user-plus"></i> Sign up
+              <i class="fa-solid fa-user-plus"></i> Sign up
             <% end %>
           </li>
           <li>
             <%= link_to new_user_session_path ,class: 'nav-link text-light' do %>
-              <i class="fas fa-sign-in-alt"></i> Log in
+              <i class="fa-solid fa-right-to-bracket"></i> Log in
             <% end %>
           </li>
         <% end %>
